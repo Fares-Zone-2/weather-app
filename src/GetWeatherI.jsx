@@ -15,7 +15,7 @@ export default function GetWeatherIcon() {
   const [sunset, setSunset] = useState();
   const getWeatherIcon = (owmIcon) => {
     const iconMap = {
-      "01d": "wi-day-sunny",
+      "01d": "wi-day-sunny text-yellow-500",
       "01n": "wi-night-clear",
       "02d": "wi-day-cloudy",
       "02n": "wi-night-alt-cloudy",
@@ -67,10 +67,11 @@ export default function GetWeatherIcon() {
         setSunset(sunsetLocal);
       });
   }, []);
+
   return (
     <div className="main">
-      <div className="flex justify-between">
-        <i className={`wi ${activeIcon} text-9xl text-yellow-50`}></i>
+      <div className="flex justify-between items-end">
+        <i className={`wi ${activeIcon} text-8xl `}></i>
         <div className="info">
           <span className="block text-white text-5xl relative">
             {main.temp}
